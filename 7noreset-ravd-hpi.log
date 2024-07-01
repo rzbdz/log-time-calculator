@@ -1,0 +1,513 @@
+#root@k1:/sys/kernel/debug/usb/soc:usb3hub@0# python3 ~/lsusb.py
+# WARNING: Failure to read usb.ids
+#usb1              1d6b:0002 09 1IF  [USB 2.00,   480 Mbps,   0mA] (Linux 6.1.15 ehci_hcd Spacemit EHCI mv ehci) hub
+#  1-1               05e3:0608 09 1IF  [USB 2.00,   480 Mbps, 100mA] () hub
+#    1-1.1             0bda:b85b e0 2IFs [USB 1.00,    12 Mbps, 500mA] (Realtek Bluetooth Radio 00e04c000001)
+#    1-1.3             04f2:b650 ef 2IFs [USB 2.00,   480 Mbps, 500mA] (SunplusIT Inc USB2.0 FHD UVC WebCam PSD20231118V1)
+#    1-1.4             1c4f:0043 00 2IFs [USB 2.00,   1.5 Mbps, 100mA] (HS-KX312  -US-01-01- USB Keyboard)
+#usb2              1d6b:0002 09 1IF  [USB 2.00,   480 Mbps,   0mA] (xhci-hcd xhci-hcd.0.auto) hub
+#  2-1               2109:2817 09 1IF  [USB 2.10,   480 Mbps,   0mA] (VIA Labs, Inc. USB2.0 Hub 000000000) hub
+#    2-1.4             413c:301a 00 1IF  [USB 2.00,   1.5 Mbps, 100mA] (PixArt Dell MS116 USB Optical Mouse)
+#    2-1.5             2109:8817 11 1IF  [USB 2.01,   480 Mbps, 100mA] (VIA Labs, Inc. USB Billboard Device 0000000000000001)
+#usb3              1d6b:0003 09 1IF  [USB 3.00,  5000 Mbps,   0mA] (xhci-hcd xhci-hcd.0.auto) hub
+#  3-1               2109:0817 09 1IF  [USB 3.20,  5000 Mbps,   0mA] (VIA Labs, Inc. USB3.0 Hub 000000000) hub
+
+
+[ 1208.657270] CPU1 is up
+[ 1208.658251] CPU2 is up
+[ 1208.659437] CPU3 is up
+[ 1208.661717] CPU4 is up
+[ 1208.663285] CPU5 is up
+[ 1208.664973] CPU6 is up
+[ 1208.667106] CPU7 is up
+[ 1208.878912] k1x-dwc-pcie ca400000.pcie: PCIe Gen.1 x1 link up
+[ 1209.070915] k1x-dwc-pcie ca800000.pcie: PCIe Gen.2 x2 link up
+[ 1209.134298] serial_pxa_set_mctrl: rts: 0x0
+[ 1209.134323] serial_pxa_set_mctrl: rts: 0x2
+[ 1209.134327] serial_pxa_set_mctrl: rts: 0x2
+[ 1209.134546] udc_reset ...
+[ 1209.134555] udc_start ...
+[ 1209.134742] usb usb1: usb resume device begin 0
+[ 1209.134754] usb usb1: usb non generic driver resume begin 0
+[ 1209.134759] usb usb1: usb generic driver resume begin 0
+[ 1209.134778] usb usb1: usb generic driver resume end 0
+[ 1209.134782] usb usb1: usb non generic driver resume end 0
+[ 1209.134786] usb usb1: usb resume device down 0
+[ 1209.134890] usb 1-1: usb resume device begin 1
+[ 1209.134927] usb 1-1: usb non generic driver resume begin 1
+[ 1209.134933] usb 1-1: usb generic driver resume begin 1
+[ 1209.134938] usb 1-1: usb port resume begin 1
+[ 1209.134946] usb 1-1: usb hub port status begin 1
+[ 1209.134988] usb 1-1: usb hub port status end 1
+[ 1209.134993] usb 1-1: usb hub port feat begin 1
+[ 1209.135020] usb 1-1: usb hub port feat end 1
+[ 1209.135028] usb 1-1: usb hub again port status begin 1
+[ 1209.135193] RTW: resume start
+[ 1209.135201] RTW: ERROR rtw_mi_check_status-wlP1p1s0 !rtw_is_adapter_up
+[ 1209.135220] RTW: rtw_resume_common:0 in 0 ms
+[ 1209.136469] spacemit-k1x-combphy c0b10000.phy: USB3 PHY init.
+[ 1209.136650] usb usb3: usb resume device begin 0
+[ 1209.136651] usb usb2: usb resume device begin 0
+[ 1209.136659] usb usb3: usb non generic driver resume begin 0
+[ 1209.136662] usb usb2: usb non generic driver resume begin 0
+[ 1209.136665] usb usb3: usb generic driver resume begin 0
+[ 1209.136667] usb usb2: usb generic driver resume begin 0
+[ 1209.136679] usb usb3: usb generic driver resume end 0
+[ 1209.136685] usb usb3: usb non generic driver resume end 0
+[ 1209.136689] usb usb3: usb resume device down 0
+[ 1209.137565] usb suspend ...
+[ 1209.141712] nvme nvme0: 8/0/0 default/read/poll queues
+[ 1209.146923] usb usb2: usb generic driver resume end 0
+[ 1209.146933] usb usb2: usb non generic driver resume end 0
+[ 1209.146938] usb usb2: usb resume device down 0
+[ 1209.162996] usb 3-1: usb resume device begin 1
+[ 1209.163006] usb 3-1: usb non generic driver resume begin 1
+[ 1209.163010] usb 3-1: usb generic driver resume begin 1
+[ 1209.163016] usb 3-1: usb port resume begin 1
+[ 1209.163023] usb 3-1: usb hub port status begin 1
+[ 1209.163065] usb 3-1: usb hub port status end 1
+[ 1209.163070] usb 3-1: usb hub port feat begin 1
+[ 1209.182965] usb 1-1: usb hub again port status end 1
+[ 1209.182971] usb 1-1: usb hub suspend cleared begin 1
+[ 1209.202914] usb 1-1: usb hub suspend cleared end 1
+[ 1209.202920] usb 1-1: usb hub persist wait begin 1
+[ 1209.202958] usb 1-1: usb finish port resume begin
+[ 1209.202964] usb 1-1: finish reset-resume
+[ 1209.202969] usb 1-1: usb finport set state begin 1
+[ 1209.202974] usb 1-1: usb finport set state end 1
+[ 1209.202980] usb 1-1: usb reset resume begin 1
+[ 1209.202984] usb 1-1: usb ravd1 begin 1
+[ 1209.202990] usb 1-1: usb ravd1 end 1
+[ 1209.202994] usb 1-1: usb ravd2 begin 1
+[ 1209.254960] usb 2-1: usb resume device begin 1
+[ 1209.254968] usb 2-1: usb non generic driver resume begin 1
+[ 1209.254973] usb 2-1: usb generic driver resume begin 1
+[ 1209.254978] usb 2-1: usb port resume begin 1
+[ 1209.254984] usb 2-1: usb hub port status begin 1
+[ 1209.274915] usb 2-1: usb hub suspend cleared end 1
+[ 1209.274921] usb 2-1: usb hub persist wait begin 1
+[ 1209.302957] usb 2-1: usb finish port resume begin
+[ 1209.302963] usb 2-1: finish reset-resume
+[ 1209.302967] usb 2-1: usb finport set state begin 1
+[ 1209.302972] usb 2-1: usb finport set state end 1
+[ 1209.302977] usb 2-1: usb reset resume begin 1
+[ 1209.302982] usb 2-1: usb ravd1 begin 1
+[ 1209.302986] usb 2-1: usb ravd1 end 1
+[ 1209.302991] usb 2-1: usb ravd2 begin 1
+[ 1209.331020] usb 1-1: reset high-speed USB device number 2 using mv-ehci
+[ 1209.331030] usb 1-1: usb hpi1 begin 1
+[ 1209.331035] usb 1-1: usb hpi1_newscheme begin 1
+[ 1209.456809] usb 2-1: reset high-speed USB device number 2 using xhci-hcd
+[ 1209.456821] usb 2-1: usb hpi1 begin 1
+[ 1209.456825] usb 2-1: usb hpi1_newscheme begin 1
+[ 1209.462924] usb 1-1: usb hpi1_newscheme end 1
+[ 1209.462931] usb 1-1: usb hpi1_address begin 1
+[ 1209.490914] usb 1-1: usb hpi1 end with 0-th 1
+[ 1209.490921] usb 1-1: usb hpi2 begin 1
+[ 1209.490926] usb 1-1: usb hpi2_port_reset begin 1
+[ 1209.490931] usb 1-1: usb hpi2_port_reset end 1
+[ 1209.490935] usb 1-1: usb hpi2_epinit begin 1
+[ 1209.490940] usb 1-1: usb hpi2_epinit end 1
+[ 1209.490944] usb 1-1: usb hpi2_desc begin 1
+[ 1209.491268] usb 1-1: usb hpi2_desc end 1
+[ 1209.491280] usb 1-1: usb hpi2 end 1
+[ 1209.491285] usb 1-1: usb ravd2 end after 0-th retries 1
+[ 1209.491290] usb 1-1: usb ravd3 begin 1
+[ 1209.491639] usb 1-1: usb ravd3 end 1
+[ 1209.491644] usb 1-1: usb ravd4 begin 1
+[ 1209.491884] usb 1-1: usb ravd4 end 1
+[ 1209.491888] usb 1-1: usb ravd5 begin 1
+[ 1209.491989] usb 1-1: usb ravd5 end 1
+[ 1209.491994] usb 1-1: usb ravd6 begin 1
+[ 1209.492001] usb 1-1: usb ravd6 end 1
+[ 1209.492005] usb 1-1: usb reset resume end 1
+[ 1209.492009] usb 1-1: usb retry reset resume begin 1
+[ 1209.492138] usb 1-1: usb retry reset resume end 1
+[ 1209.492143] usb 1-1: usb dis remote std begin 1
+[ 1209.492147] usb 1-1: usb dis remote std end 1
+[ 1209.492151] usb 1-1: usb finish port resume end 1
+[ 1209.492155] usb 1-1: usb hub persist end begin 1
+[ 1209.492159] usb 1-1: usb port resume end normal 1
+[ 1209.492164] usb 1-1: usb generic driver resume end 1
+[ 1209.492170] usb 1-1: usb non generic driver resume end 1
+[ 1209.492174] usb 1-1: usb resume device down 1
+[ 1209.582941] usb 2-1: usb hpi1_newscheme end 1
+[ 1209.582947] usb 2-1: usb hpi1_address begin 1
+[ 1209.602915] usb 2-1: usb hpi1 end with 0-th 1
+[ 1209.602921] usb 2-1: usb hpi2 begin 1
+[ 1209.602926] usb 2-1: usb hpi2_port_reset begin 1
+[ 1209.602930] usb 2-1: usb hpi2_port_reset end 1
+[ 1209.602935] usb 2-1: usb hpi2_epinit begin 1
+[ 1209.602939] usb 2-1: usb hpi2_epinit end 1
+[ 1209.602943] usb 2-1: usb hpi2_desc begin 1
+[ 1209.603173] usb 2-1: usb hpi2_desc end 1
+[ 1209.603564] usb 2-1: usb hpi2 end 1
+[ 1209.603569] usb 2-1: usb ravd2 end after 0-th retries 1
+[ 1209.603574] usb 2-1: usb ravd3 begin 1
+[ 1209.603958] usb 2-1: usb ravd3 end 1
+[ 1209.603964] usb 2-1: usb ravd4 begin 1
+[ 1209.616750] usb 2-1: usb ravd4 end 1
+[ 1209.616756] usb 2-1: usb ravd5 begin 1
+[ 1209.648821] usb 2-1: usb ravd5 end 1
+[ 1209.648827] usb 2-1: usb ravd6 begin 1
+[ 1209.648833] usb 2-1: usb ravd6 end 1
+[ 1209.648838] usb 2-1: usb reset resume end 1
+[ 1209.648843] usb 2-1: usb retry reset resume begin 1
+[ 1209.648998] usb 2-1: usb retry reset resume end 1
+[ 1209.649003] usb 2-1: usb dis remote std begin 1
+[ 1209.649008] usb 2-1: usb dis remote std end 1
+[ 1209.649012] usb 2-1: usb finish port resume end 1
+[ 1209.649016] usb 2-1: usb hub persist end begin 1
+[ 1209.649021] usb 2-1: usb port resume end normal 1
+[ 1209.649026] usb 2-1: usb generic driver resume end 1
+[ 1209.649031] usb 2-1: usb non generic driver resume end 1
+[ 1209.649036] usb 2-1: usb resume device down 1
+[ 1209.682943] usb 3-1: usb hub port feat end 1
+[ 1209.682950] usb 3-1: usb hub again port status begin 1
+[ 1209.706983] usb 1-1.3: usb resume device begin 1.3
+[ 1209.706984] usb 1-1.4: usb resume device begin 1.4
+[ 1209.706991] usb 1-1.3: usb non generic driver resume begin 1.3
+[ 1209.706992] usb 1-1.4: usb non generic driver resume begin 1.4
+[ 1209.706996] usb 1-1.3: usb generic driver resume begin 1.3
+[ 1209.706997] usb 1-1.4: usb generic driver resume begin 1.4
+[ 1209.707002] usb 1-1.4: usb port resume begin 1.4
+[ 1209.707007] usb 1-1.4: usb hub port status begin 1.4
+[ 1209.707010] usb 1-1.3: usb port resume begin 1.3
+[ 1209.707011] usb 1-1.1: usb resume device begin 1.1
+[ 1209.707017] usb 1-1.3: usb hub port status begin 1.3
+[ 1209.707019] usb 1-1.1: usb non generic driver resume begin 1.1
+[ 1209.707025] usb 1-1.1: usb generic driver resume begin 1.1
+[ 1209.707030] usb 1-1.1: usb port resume begin 1.1
+[ 1209.707036] usb 1-1.1: usb hub port status begin 1.1
+[ 1209.726915] usb 1-1.4: usb hub suspend cleared end 1.4
+[ 1209.726916] usb 1-1.3: usb hub suspend cleared end 1.3
+[ 1209.726920] usb 1-1.1: usb hub suspend cleared end 1.1
+[ 1209.726922] usb 1-1.4: usb hub persist wait begin 1.4
+[ 1209.726922] usb 1-1.3: usb hub persist wait begin 1.3
+[ 1209.726927] usb 1-1.1: usb hub persist wait begin 1.1
+[ 1209.726930] usb 1-1.3: usb finish port resume begin
+[ 1209.726930] usb 1-1.4: usb finish port resume begin
+[ 1209.726933] usb 1-1.1: usb finish port resume begin
+[ 1209.726936] usb 1-1.4: finish reset-resume
+[ 1209.726936] usb 1-1.3: finish reset-resume
+[ 1209.726938] usb 1-1.1: finish reset-resume
+[ 1209.726941] usb 1-1.4: usb finport set state begin 1.4
+[ 1209.726942] usb 1-1.3: usb finport set state begin 1.3
+[ 1209.726943] usb 1-1.1: usb finport set state begin 1.1
+[ 1209.726947] usb 1-1.4: usb finport set state end 1.4
+[ 1209.726948] usb 1-1.3: usb finport set state end 1.3
+[ 1209.726949] usb 1-1.1: usb finport set state end 1.1
+[ 1209.726952] usb 1-1.4: usb reset resume begin 1.4
+[ 1209.726953] usb 1-1.3: usb reset resume begin 1.3
+[ 1209.726954] usb 1-1.1: usb reset resume begin 1.1
+[ 1209.726958] usb 1-1.3: usb ravd1 begin 1.3
+[ 1209.726958] usb 1-1.4: usb ravd1 begin 1.4
+[ 1209.726959] usb 1-1.1: usb ravd1 begin 1.1
+[ 1209.726963] usb 1-1.3: usb ravd1 end 1.3
+[ 1209.726963] usb 1-1.4: usb ravd1 end 1.4
+[ 1209.726965] usb 1-1.1: usb ravd1 end 1.1
+[ 1209.726968] usb 1-1.4: usb ravd2 begin 1.4
+[ 1209.726968] usb 1-1.3: usb ravd2 begin 1.3
+[ 1209.726970] usb 1-1.1: usb ravd2 begin 1.1
+[ 1209.734942] usb 3-1: usb hub again port status end 1
+[ 1209.734948] usb 3-1: usb hub suspend cleared begin 1
+[ 1209.754913] usb 3-1: usb hub suspend cleared end 1
+[ 1209.754919] usb 3-1: usb hub persist wait begin 1
+[ 1209.754923] usb 3-1: usb finish port resume begin
+[ 1209.754927] usb 3-1: finish resume
+[ 1209.754931] usb 3-1: usb finport set state begin 1
+[ 1209.754936] usb 3-1: usb finport set state end 1
+[ 1209.754941] usb 3-1: usb retry reset resume begin 1
+[ 1209.755084] usb 3-1: usb reset resume begin 1
+[ 1209.755089] usb 3-1: usb ravd1 begin 1
+[ 1209.755093] usb 3-1: usb ravd1 end 1
+[ 1209.755098] usb 3-1: usb ravd2 begin 1
+[ 1209.806918] usb 1-1.3: reset high-speed USB device number 3 using mv-ehci
+[ 1209.806927] usb 1-1.3: usb hpi1 begin 1.3
+[ 1209.806931] usb 1-1.3: usb hpi1_newscheme begin 1.3
+[ 1209.886915] usb 1-1.3: usb hpi1_newscheme end 1.3
+[ 1209.886920] usb 1-1.3: usb hpi1_address begin 1.3
+[ 1209.888787] usb 3-1: usb hpi1 begin 1
+[ 1209.888793] usb 3-1: usb hpi1_newscheme begin 1
+[ 1209.888797] usb 3-1: usb hpi1_newscheme end 1
+[ 1209.888802] usb 3-1: usb hpi1_address begin 1
+[ 1209.888865] usb 3-1: reset SuperSpeed USB device number 2 using xhci-hcd
+[ 1209.906923] usb 3-1: usb hpi1_address end 1
+[ 1209.914913] usb 1-1.3: usb hpi1 end with 0-th 1.3
+[ 1209.914920] usb 1-1.3: usb hpi2 begin 1.3
+[ 1209.914925] usb 1-1.3: usb hpi2_port_reset begin 1.3
+[ 1209.914929] usb 1-1.3: usb hpi2_port_reset end 1.3
+[ 1209.914933] usb 1-1.3: usb hpi2_epinit begin 1.3
+[ 1209.914937] usb 1-1.3: usb hpi2_epinit end 1.3
+[ 1209.914942] usb 1-1.3: usb hpi2_desc begin 1.3
+[ 1209.916517] usb 1-1.3: usb hpi2_desc end 1.3
+[ 1209.916527] usb 1-1.3: usb hpi2 end 1.3
+[ 1209.916538] usb 1-1.3: usb ravd2 end after 0-th retries 1.3
+[ 1209.916543] usb 1-1.3: usb ravd3 begin 1.3
+[ 1209.920021] usb 3-1: usb hpi1 end with 0-th 1
+[ 1209.920027] usb 3-1: usb hpi2 begin 1
+[ 1209.920031] usb 3-1: usb hpi2_port_reset begin 1
+[ 1209.920035] usb 3-1: usb hpi2_port_reset end 1
+[ 1209.920039] usb 3-1: usb hpi2_epinit begin 1
+[ 1209.920043] usb 3-1: usb hpi2_epinit end 1
+[ 1209.920047] usb 3-1: usb hpi2_desc begin 1
+[ 1209.927019] usb 1-1.3: usb ravd3 end 1.3
+[ 1209.927026] usb 1-1.3: usb ravd4 begin 1.3
+[ 1209.927137] usb 1-1.3: usb ravd4 end 1.3
+[ 1209.927142] usb 1-1.3: usb ravd5 begin 1.3
+[ 1209.927153] usb 1-1.3: usb ravd5 end 1.3
+[ 1209.927157] usb 1-1.3: usb ravd6 begin 1.3
+[ 1209.927163] usb 1-1.3: usb ravd6 end 1.3
+[ 1209.927168] usb 1-1.3: usb reset resume end 1.3
+[ 1209.927172] usb 1-1.3: usb retry reset resume begin 1.3
+[ 1209.927263] usb 1-1.3: usb retry reset resume end 1.3
+[ 1209.927268] usb 1-1.3: usb dis remote std begin 1.3
+[ 1209.927273] usb 1-1.3: usb dis remote std end 1.3
+[ 1209.927277] usb 1-1.3: usb finish port resume end 1.3
+[ 1209.927281] usb 1-1.3: usb hub persist end begin 1.3
+[ 1209.927285] usb 1-1.3: usb port resume end normal 1.3
+[ 1209.927290] usb 1-1.3: usb generic driver resume end 1.3
+[ 1209.927295] usb 1-1.3: usb non generic driver resume end 1.3
+[ 1209.927300] usb 1-1.3: usb resume device down 1.3
+[ 1209.933246] usb 3-1: usb hpi2_desc end 1
+[ 1209.933682] usb 3-1: usb hpi2 end 1
+[ 1209.933688] usb 3-1: usb ravd2 end after 0-th retries 1
+[ 1209.933693] usb 3-1: usb ravd3 begin 1
+[ 1209.934088] usb 3-1: usb ravd3 end 1
+[ 1209.934093] usb 3-1: usb ravd4 begin 1
+[ 1209.936785] usb 3-1: usb ravd4 end 1
+[ 1209.936790] usb 3-1: usb ravd5 begin 1
+[ 1209.936873] usb 3-1: usb ravd5 end 1
+[ 1209.936878] usb 3-1: usb ravd6 begin 1
+[ 1209.936884] usb 3-1: usb ravd6 end 1
+[ 1209.936888] usb 3-1: usb reset resume end 1
+[ 1209.936893] usb 3-1: usb retry reset resume begin 1
+[ 1209.936989] usb 3-1: usb retry reset resume end 1
+[ 1209.936995] usb 3-1: usb dis remote std begin 1
+[ 1209.936999] usb 3-1: usb dis remote std end 1
+[ 1209.937003] usb 3-1: usb finish port resume end 1
+[ 1209.937007] usb 3-1: usb hub persist end begin 1
+[ 1209.937011] usb 3-1: usb port resume end normal 1
+[ 1209.937017] usb 3-1: usb generic driver resume end 1
+[ 1209.937021] usb 3-1: usb non generic driver resume end 1
+[ 1209.937025] usb 3-1: usb resume device down 1
+[ 1210.183023] usb 1-1.4: reset low-speed USB device number 4 using mv-ehci
+[ 1210.183032] usb 1-1.4: usb hpi1 begin 1.4
+[ 1210.183037] usb 1-1.4: usb hpi1_newscheme begin 1.4
+[ 1210.238974] usb 2-1.4: usb resume device begin 1.4
+[ 1210.238977] usb 2-1.5: usb resume device begin 1.5
+[ 1210.238982] usb 2-1.4: usb non generic driver resume begin 1.4
+[ 1210.238995] usb 2-1.5: usb non generic driver resume begin 1.5
+[ 1210.238995] usb 2-1.4: usb generic driver resume begin 1.4
+[ 1210.239001] usb 2-1.5: usb generic driver resume begin 1.5
+[ 1210.239002] usb 2-1.4: usb port resume begin 1.4
+[ 1210.239008] usb 2-1.5: usb port resume begin 1.5
+[ 1210.239009] usb 2-1.4: usb hub port status begin 1.4
+[ 1210.239015] usb 2-1.5: usb hub port status begin 1.5
+[ 1210.258933] usb 2-1.4: usb hub suspend cleared end 1.4
+[ 1210.258933] usb 2-1.5: usb hub suspend cleared end 1.5
+[ 1210.258940] usb 2-1.4: usb hub persist wait begin 1.4
+[ 1210.258940] usb 2-1.5: usb hub persist wait begin 1.5
+[ 1210.258948] usb 2-1.5: usb finish port resume begin
+[ 1210.258947] usb 2-1.4: usb finish port resume begin
+[ 1210.258953] usb 2-1.4: finish reset-resume
+[ 1210.258953] usb 2-1.5: finish reset-resume
+[ 1210.258958] usb 2-1.4: usb finport set state begin 1.4
+[ 1210.258958] usb 2-1.5: usb finport set state begin 1.5
+[ 1210.258963] usb 2-1.4: usb finport set state end 1.4
+[ 1210.258964] usb 2-1.5: usb finport set state end 1.5
+[ 1210.258968] usb 2-1.5: usb reset resume begin 1.5
+[ 1210.258968] usb 2-1.4: usb reset resume begin 1.4
+[ 1210.258974] usb 2-1.5: usb ravd1 begin 1.5
+[ 1210.258974] usb 2-1.4: usb ravd1 begin 1.4
+[ 1210.258980] usb 2-1.4: usb ravd1 end 1.4
+[ 1210.258980] usb 2-1.5: usb ravd1 end 1.5
+[ 1210.258984] usb 2-1.4: usb ravd2 begin 1.4
+[ 1210.258984] usb 2-1.5: usb ravd2 begin 1.5
+[ 1210.338955] usb 2-1.5: reset high-speed USB device number 4 using xhci-hcd
+[ 1210.338965] usb 2-1.5: usb hpi1 begin 1.5
+[ 1210.338970] usb 2-1.5: usb hpi1_newscheme begin 1.5
+[ 1210.418936] usb 2-1.5: usb hpi1_newscheme end 1.5
+[ 1210.418944] usb 2-1.5: usb hpi1_address begin 1.5
+[ 1210.438916] usb 2-1.5: usb hpi1 end with 0-th 1.5
+[ 1210.438923] usb 2-1.5: usb hpi2 begin 1.5
+[ 1210.438928] usb 2-1.5: usb hpi2_port_reset begin 1.5
+[ 1210.438933] usb 2-1.5: usb hpi2_port_reset end 1.5
+[ 1210.438938] usb 2-1.5: usb hpi2_epinit begin 1.5
+[ 1210.438943] usb 2-1.5: usb hpi2_epinit end 1.5
+[ 1210.438947] usb 2-1.5: usb hpi2_desc begin 1.5
+[ 1210.439030] usb 2-1.5: usb hpi2_desc end 1.5
+[ 1210.439299] usb 2-1.5: usb hpi2 end 1.5
+[ 1210.439311] usb 2-1.5: usb ravd2 end after 0-th retries 1.5
+[ 1210.439317] usb 2-1.5: usb ravd3 begin 1.5
+[ 1210.454921] usb 1-1.4: usb hpi1_newscheme end 1.4
+[ 1210.454928] usb 1-1.4: usb hpi1_address begin 1.4
+[ 1210.482912] usb 1-1.4: usb hpi1 end with 0-th 1.4
+[ 1210.482918] usb 1-1.4: usb hpi2 begin 1.4
+[ 1210.482923] usb 1-1.4: usb hpi2_port_reset begin 1.4
+[ 1210.482928] usb 1-1.4: usb hpi2_port_reset end 1.4
+[ 1210.482932] usb 1-1.4: usb hpi2_epinit begin 1.4
+[ 1210.482936] usb 1-1.4: usb hpi2_epinit end 1.4
+[ 1210.482941] usb 1-1.4: usb hpi2_desc begin 1.4
+[ 1210.484018] usb 1-1.4: usb hpi2_desc end 1.4
+[ 1210.484028] usb 1-1.4: usb hpi2 end 1.4
+[ 1210.484042] usb 1-1.4: usb ravd2 end after 0-th retries 1.4
+[ 1210.484047] usb 1-1.4: usb ravd3 begin 1.4
+[ 1210.486269] usb 1-1.4: usb ravd3 end 1.4
+[ 1210.486274] usb 1-1.4: usb ravd4 begin 1.4
+[ 1210.486637] usb 1-1.4: usb ravd4 end 1.4
+[ 1210.486642] usb 1-1.4: usb ravd5 begin 1.4
+[ 1210.486746] usb 1-1.4: usb ravd5 end 1.4
+[ 1210.486751] usb 1-1.4: usb ravd6 begin 1.4
+[ 1210.486757] usb 1-1.4: usb ravd6 end 1.4
+[ 1210.486761] usb 1-1.4: usb reset resume end 1.4
+[ 1210.486766] usb 1-1.4: usb retry reset resume begin 1.4
+[ 1210.487266] usb 1-1.4: usb retry reset resume end 1.4
+[ 1210.487272] usb 1-1.4: usb dis remote std begin 1.4
+[ 1210.487277] usb 1-1.4: usb dis remote std end 1.4
+[ 1210.487281] usb 1-1.4: usb finish port resume end 1.4
+[ 1210.487285] usb 1-1.4: usb hub persist end begin 1.4
+[ 1210.487290] usb 1-1.4: usb port resume end normal 1.4
+[ 1210.487294] usb 1-1.4: usb generic driver resume end 1.4
+[ 1210.487300] usb 1-1.4: usb non generic driver resume end 1.4
+[ 1210.487305] usb 1-1.4: usb resume device down 1.4
+[ 1210.489535] usb 2-1.5: usb ravd3 end 1.5
+[ 1210.489541] usb 2-1.5: usb ravd4 begin 1.5
+[ 1210.489615] usb 2-1.5: usb ravd4 end 1.5
+[ 1210.489621] usb 2-1.5: usb ravd5 begin 1.5
+[ 1210.489626] usb 2-1.5: usb ravd5 end 1.5
+[ 1210.489631] usb 2-1.5: usb ravd6 begin 1.5
+[ 1210.489637] usb 2-1.5: usb ravd6 end 1.5
+[ 1210.489641] usb 2-1.5: usb reset resume end 1.5
+[ 1210.489645] usb 2-1.5: usb retry reset resume begin 1.5
+[ 1210.489729] usb 2-1.5: usb retry reset resume end 1.5
+[ 1210.489735] usb 2-1.5: usb dis remote std begin 1.5
+[ 1210.489766] usb 2-1.5: usb dis remote std end 1.5
+[ 1210.489771] usb 2-1.5: usb finish port resume end 1.5
+[ 1210.489776] usb 2-1.5: usb hub persist end begin 1.5
+[ 1210.489781] usb 2-1.5: usb port resume end normal 1.5
+[ 1210.489785] usb 2-1.5: usb generic driver resume end 1.5
+[ 1210.489789] usb 2-1.5: usb non generic driver resume end 1.5
+[ 1210.489793] usb 2-1.5: usb resume device down 1.5
+[ 1210.493062] es8326 2-0019: Unable to sync registers 0x0-0xc. -6
+[ 1210.563021] usb 1-1.1: reset full-speed USB device number 5 using mv-ehci
+[ 1210.563033] usb 1-1.1: usb hpi1 begin 1.1
+[ 1210.563037] usb 1-1.1: usb hpi1_newscheme begin 1.1
+[ 1210.642912] usb 1-1.1: usb hpi1_newscheme end 1.1
+[ 1210.642917] usb 1-1.1: usb hpi1_address begin 1.1
+[ 1210.670917] usb 1-1.1: usb hpi1 end with 0-th 1.1
+[ 1210.670923] usb 1-1.1: usb hpi2 begin 1.1
+[ 1210.670927] usb 1-1.1: usb hpi2_port_reset begin 1.1
+[ 1210.670931] usb 1-1.1: usb hpi2_port_reset end 1.1
+[ 1210.670935] usb 1-1.1: usb hpi2_epinit begin 1.1
+[ 1210.670939] usb 1-1.1: usb hpi2_epinit end 1.1
+[ 1210.670943] usb 1-1.1: usb hpi2_desc begin 1.1
+[ 1210.671142] usb 1-1.1: usb hpi2_desc end 1.1
+[ 1210.671151] usb 1-1.1: usb hpi2 end 1.1
+[ 1210.671156] usb 1-1.1: usb ravd2 end after 0-th retries 1.1
+[ 1210.671161] usb 1-1.1: usb ravd3 begin 1.1
+[ 1210.671642] usb 1-1.1: usb ravd3 end 1.1
+[ 1210.671646] usb 1-1.1: usb ravd4 begin 1.1
+[ 1210.671759] usb 1-1.1: usb ravd4 end 1.1
+[ 1210.671764] usb 1-1.1: usb ravd5 begin 1.1
+[ 1210.671849] usb 1-1.1: usb ravd5 end 1.1
+[ 1210.671854] usb 1-1.1: usb ravd6 begin 1.1
+[ 1210.671858] usb 1-1.1: usb ravd6 end 1.1
+[ 1210.671863] usb 1-1.1: usb reset resume end 1.1
+[ 1210.671867] usb 1-1.1: usb retry reset resume begin 1.1
+[ 1210.672014] usb 1-1.1: usb retry reset resume end 1.1
+[ 1210.672019] usb 1-1.1: usb dis remote std begin 1.1
+[ 1210.672024] usb 1-1.1: usb dis remote std end 1.1
+[ 1210.672028] usb 1-1.1: usb finish port resume end 1.1
+[ 1210.672032] usb 1-1.1: usb hub persist end begin 1.1
+[ 1210.672036] usb 1-1.1: usb port resume end normal 1.1
+[ 1210.672042] usb 1-1.1: usb generic driver resume end 1.1
+[ 1210.672046] usb 1-1.1: usb non generic driver resume end 1.1
+[ 1210.672050] usb 1-1.1: usb resume device down 1.1
+[ 1210.768741] usb 2-1.4: reset low-speed USB device number 3 using xhci-hcd
+[ 1210.768749] usb 2-1.4: usb hpi1 begin 1.4
+[ 1210.768754] usb 2-1.4: usb hpi1_newscheme begin 1.4
+[ 1211.086941] usb 2-1.4: usb hpi1_newscheme end 1.4
+[ 1211.086947] usb 2-1.4: usb hpi1_address begin 1.4
+[ 1211.106913] usb 2-1.4: usb hpi1 end with 0-th 1.4
+[ 1211.106919] usb 2-1.4: usb hpi2 begin 1.4
+[ 1211.106923] usb 2-1.4: usb hpi2_port_reset begin 1.4
+[ 1211.106928] usb 2-1.4: usb hpi2_port_reset end 1.4
+[ 1211.106933] usb 2-1.4: usb hpi2_epinit begin 1.4
+[ 1211.106937] usb 2-1.4: usb hpi2_epinit end 1.4
+[ 1211.106941] usb 2-1.4: usb hpi2_desc begin 1.4
+[ 1211.107520] usb 2-1.4: usb hpi2_desc end 1.4
+[ 1211.107530] usb 2-1.4: usb hpi2 end 1.4
+[ 1211.107535] usb 2-1.4: usb ravd2 end after 0-th retries 1.4
+[ 1211.107541] usb 2-1.4: usb ravd3 begin 1.4
+[ 1211.108393] usb 2-1.4: usb ravd3 end 1.4
+[ 1211.108398] usb 2-1.4: usb ravd4 begin 1.4
+[ 1211.120856] usb 2-1.4: usb ravd4 end 1.4
+[ 1211.120862] usb 2-1.4: usb ravd5 begin 1.4
+[ 1211.120947] usb 2-1.4: usb ravd5 end 1.4
+[ 1211.120953] usb 2-1.4: usb ravd6 begin 1.4
+[ 1211.120958] usb 2-1.4: usb ravd6 end 1.4
+[ 1211.120962] usb 2-1.4: usb reset resume end 1.4
+[ 1211.120966] usb 2-1.4: usb retry reset resume begin 1.4
+[ 1211.121283] usb 2-1.4: usb retry reset resume end 1.4
+[ 1211.121288] usb 2-1.4: usb dis remote std begin 1.4
+[ 1211.121292] usb 2-1.4: usb dis remote std end 1.4
+[ 1211.121296] usb 2-1.4: usb finish port resume end 1.4
+[ 1211.121300] usb 2-1.4: usb hub persist end begin 1.4
+[ 1211.121305] usb 2-1.4: usb port resume end normal 1.4
+[ 1211.121309] usb 2-1.4: usb generic driver resume end 1.4
+[ 1211.121314] usb 2-1.4: usb non generic driver resume end 1.4
+[ 1211.121319] usb 2-1.4: usb resume device down 1.4
+[ 1211.134457] OOM killer enabled.
+[ 1211.134465] Restarting tasks ... done.
+[ 1211.138269] random: crng reseeded on system resumption
+[ 1211.139436] PM: suspend exit
+[ 1211.197202] [drm] spacemit_crtc_atomic_enable(power on)
+[ 1211.200518] [drm] pxclk set_clk_val 142857000
+[ 1211.200639] [drm] dpu_init
+[ 1211.200702] [drm] spacemit_dsi_encoder_enable()
+[ 1211.201726] [drm] lt8911exb_panel_enable()
+[ 1211.275120] [drm] DPU type 1 id 2 Start!
+[ 1211.665815] RTW: default domain:0x7f applied, txpwr_lmt:WW
+[ 1211.763184] [BB]bw=80M, default trig_time_cca =100
+[ 1211.763205] [BB][halbb_la_bb_set_smp_rate] smp_rate_tmp=0, la_smp_rate_log=80 M
+[ 1212.130989] RTW: [PHL STA]- role-idx: 0
+[ 1212.131011] RTW: [PHL STA]- mac_addr:64:82:14:12:59:dc
+[ 1212.131019] RTW: [PHL STA]- aid: 0
+[ 1212.131023] RTW: [PHL STA]- macid: 0
+[ 1212.131027] RTW: [PHL STA]- wifi_band: 1
+[ 1212.131031] RTW: [PHL STA]- bw: 0
+[ 1212.131034] RTW: [PHL STA]- chan: 149
+[ 1212.131038] RTW: [PHL STA]- offset: 0
+[ 1214.610949] bluesleep: _pxa_timer_handler: release qos
+[ 1216.563246] RTW: rtw_set_802_11_connect(wlP1p1s0)  fw_state=0x00000008
+[ 1216.564741] RTW: ERROR _connect_msg_hdlr(wlP1p1s0): assoc_AP_vendor gone!
+[ 1216.564804] RTW: [PHL STA]- role-idx: 0
+[ 1216.564811] RTW: [PHL STA]- mac_addr:c4:69:f0:e7:4c:81
+[ 1216.564818] RTW: [PHL STA]- aid: 0
+[ 1216.564822] RTW: [PHL STA]- macid: 0
+[ 1216.564826] RTW: [PHL STA]- wifi_band: 1
+[ 1216.564830] RTW: [PHL STA]- bw: 0
+[ 1216.564834] RTW: [PHL STA]- chan: 149
+[ 1216.564838] RTW: [PHL STA]- offset: 0
+[ 1216.659714] RTW: start auth
+[ 1216.666766] RTW: auth success, start assoc
+[ 1216.682378] RTW: assoc success
+[ 1216.682457] RTW: Updated A-MPDU number to 64 as default for c4:69:f0:e7:4c:81
+[ 1216.684909] RTW: recv eapol packet 1/4
+[ 1216.685777] RTW: send eapol packet 2/4
+[ 1216.695545] RTW: recv eapol packet 3/4
+[ 1216.696031] RTW: send eapol packet 4/4
+[ 1216.696831] RTW: setkey_hdl: set group key for c4:69:f0:e7:4c:81, kid:1 type:1 algo:TKIP
+[ 1216.697152] IPv6: ADDRCONF(NETDEV_CHANGE): wlP1p1s0: link becomes ready
+[ 1216.703015] RTW: [PHL STA]- role-idx: 0
+[ 1216.703041] RTW: [PHL STA]- mac_addr:c4:69:f0:e7:4c:81
+[ 1216.703050] RTW: [PHL STA]- aid: 1
+[ 1216.703054] RTW: [PHL STA]- macid: 0
+[ 1216.703059] RTW: [PHL STA]- wifi_band: 1
+[ 1216.703063] RTW: [PHL STA]- bw: 2
+[ 1216.703068] RTW: [PHL STA]- chan: 149
+[ 1216.703073] RTW: [PHL STA]- offset: 1
+[ 1216.716036] RTW: recv eapol packet - WPA Group Key 1/2
+[ 1216.717112] RTW: send eapol packet - WPA Group Key 2/2
+

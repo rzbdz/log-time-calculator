@@ -1,6 +1,7 @@
 import re
 from operator import itemgetter
 import trace_rule
+import parser_config
 
 def parser(input):
     match = re.search(trace_rule.match_pattern, input)
@@ -11,11 +12,17 @@ def parser(input):
     msg = str(match.group(trace_rule.match_logmsg_group))
     return True, (usbnum,  msg ,time)
 
-def tryadd(dicku, msg, kw, key, time):
-    if kw in msg:
-        if "begin" in msg:
+def tryadd(dicku, msg, kw, key, time, force_kill_collapsed):
+    if not force_kill_collapsed:
+        if kw in msg:
+            if "begin" in msg:
+                dicku[key][0] = time
+            if "end" in msg or "down" in msg:
+                dicku[key][1] = time
+    else:
+        if f"{kw} begin" in msg:
             dicku[key][0] = time
-        if "end" in msg or "down" in msg:
+        if f"{kw} end" in msg:
             dicku[key][1] = time
 
 def print_final(dick: dict):
@@ -47,7 +54,11 @@ def gen_csv(dick):
 init_display_keys = []
 
 def load_display_keys():
-    for _, display_key in trace_rule.rule:
+    for r in trace_rule.rule:
+        if len(r) == 2:
+            _, display_key = r
+        elif len(r) == 3:
+            _, display_key, _ = r
         init_display_keys.append(display_key)
 
 def gen_dick_val():
@@ -62,6 +73,8 @@ if __name__=="__main__":
     load_display_keys()
     tups = []
     for line in lines:
+        if parser_config.skip_hashtag and line.startswith("#"):
+            continue
         p =  parser(line)
         if p[0]:
             tups.append(p[1])
@@ -74,8 +87,13 @@ if __name__=="__main__":
         if dick.get(usbnum, None) is None:
             dick[usbnum] = gen_dick_val()
         for item in trace_rule.rule:
-            log_key, display_key = item
-            tryadd(dick[usbnum], msg, log_key, display_key, time)
+            if len(item) == 2:
+                log_key, display_key = item
+                force_kill_collapsed = False
+            else:
+                log_key, display_key, args = item
+                force_kill_collapsed = args.get("force_kill_collapsed")
+            tryadd(dick[usbnum], msg, log_key, display_key, time, force_kill_collapsed=force_kill_collapsed)
     #print_final(dick)
     gen_csv(dick)
 
