@@ -13,6 +13,12 @@ def parser(input):
     return True, (usbnum,  msg ,time)
 
 def tryadd(dicku, msg, kw, key, time, force_kill_collapsed):
+    if kw == "ravd2":
+        if f"ravd2 begin" in msg:
+            dicku[key][0] = time
+        if f"ravd2looselck end" in msg:
+            dicku[key][1] = time
+        return
     if not force_kill_collapsed:
         if kw in msg:
             if "begin" in msg:
@@ -36,7 +42,8 @@ def gen_csv(dick):
     import csv
     with open(trace_rule.output_csv, 'w', newline='',) as file:
         writer = csv.writer(file,quoting=csv.QUOTE_ALL)
-        writer.writerow(["usb", ] + [c for c in dick['1-1'].keys()])
+        ddd = next(iter(list(dick.keys())))
+        writer.writerow(["usb", ] + [c for c in dick[ddd].keys()])
         rows = []
         for usb, cl in dick.items():
             if "usb" in usb:
